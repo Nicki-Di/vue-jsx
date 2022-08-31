@@ -1,9 +1,9 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
     content: [
         "./index.html",
         "./src/**/*.{vue,js,ts,jsx,tsx}",
     ],
+    darkMode: 'class',
     theme: {
         extend: {
             colors: {
@@ -20,9 +20,11 @@ module.exports = {
                 's-90': '#F5F5F5',
                 's-100': '#FCFCFC',
                 'alert': "#ff4c41",
-                'success': "#68cf29"
+                'success': "#68cf29",
+                'orange': '#eb8153'
             }
         },
     },
     plugins: [],
 }
+

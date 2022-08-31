@@ -1,5 +1,5 @@
 <script setup>
-import MenuSection from "@/components/MenuSection.vue";
+import MenuSection from "@/components/Auxiliary/MenuSection.vue";
 import {copyRight, navigation} from "@/utils/persian"
 
 
@@ -7,9 +7,9 @@ import {copyRight, navigation} from "@/utils/persian"
 
 
 <template>
-  <div class = "flex-1 flex flex-col fixed inset-y-0 bg-primary-1 md:w-[17%]">
+  <div class = "flex-1 flex flex-col fixed inset-y-0 bg-primary-1 w-[17%] z-10">
     <div class = "flex-1 flex flex-col overflow-y-auto">
-      <div class = "flex items-center justify-center px-4 min-h-[6rem]">
+      <div class = "flex-row-center px-4 min-h-[6rem]">
         <img class = "h-8 w-auto" src = "https://tailwindui.com/img/logos/workflow-logo-indigo-300-mark-white-text.svg"
              alt = "Workflow"/>
       </div>

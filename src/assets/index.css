@@ -10,24 +10,39 @@ body {
 @layer components {
     .h1 {
         font-size: 28px;
-        font-weight: 300;
+        font-weight: 400;
     }
 
     .h2 {
         font-size: 22px;
-        font-weight: 200;
+        font-weight: 400;
     }
 
     .b1 {
         font-size: 15px;
-        font-weight: 300;
+        font-weight: 400;
     }
 
     .b2 {
         font-size: 13px;
-        font-weight: 300;
+        font-weight: 400;
     }
 }
+
+.flex-col-center{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-row-center{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
 
 @font-face {
     font-family: 'IRANSansWeb';
