@@ -1,11 +1,9 @@
 <script setup>
 import {useThemeStore} from "@/stores/theme";
-import {ref} from "vue";
 const store = useThemeStore()
 import RangeDatePicker from '@/components/RangeDatePicker.vue'
 import Title from '@/components/Texts/Title.vue'
 
-const color = ref(store.isDark ? 32 : 2)
 
 const series = [{
   name: 'خرید',
@@ -16,7 +14,7 @@ const series = [{
 }]
 
 store.$subscribe(() => {
-  chartOptions.value = {
+  chartOptions = {
     chart:{
       foreColor: store.isDark ? "#fff" : "#000",
     }
@@ -24,28 +22,15 @@ store.$subscribe(() => {
 
 
 
-const chartOptions = ref({
+let chartOptions = $ref({
   chart: {
     type: 'bar',
     fontFamily: 'IRANSansWeb, sans-serif',
     foreColor: store.isDark ? "#fff" : "#000",
     background: "rgba(255, 255, 255, 0)",
-    borderRadius: 10,
     stacked: true,
     toolbar: {
       show: true,
-      offsetX: 0,
-      offsetY: 0,
-      tools: {
-        download: true,
-        selection: true,
-        zoom: true,
-        zoomin: true,
-        zoomout: true,
-        pan: true,
-        reset: true,
-        customIcons: []
-      },
     },
     zoom: {
       enabled: true
@@ -78,8 +63,7 @@ const chartOptions = ref({
     ],
   },
   legend: {
-    position: 'right',
-    offsetY: 40,
+    position: 'top',
   },
   colors: ['#67e8f9', '#f87171']
 })
@@ -92,13 +76,13 @@ defineProps(['title'])
   <div id="chart" class="flex flex-col gap-6 rounded-lg shadow p-4 " :class="store.isDark ? 'bg-primary-1' : 'bg-white'">
     <Title>{{title}}</Title>
     <RangeDatePicker/>
-    <apexchart type="bar" height="300" width="700" :options="chartOptions" :series="series"/>
+    <apexchart type="bar" height="300" width="550" :options="chartOptions" :series="series"/>
   </div>
 
 </template>
 <style>
 .apexcharts-legend-series {
-  display: flex;
+  display: flex !important;
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -115,9 +99,6 @@ defineProps(['title'])
   margin: 0 4px;
 }
 
-.apexcharts-toolbar{
-  margin-top: 10px;
-}
 .apexcharts-menu-icon:hover svg {
 fill: #575757 !important;
 }

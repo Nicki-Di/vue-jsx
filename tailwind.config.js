@@ -21,7 +21,9 @@ module.exports = {
                 's-100': '#FCFCFC',
                 'alert': "#ff4c41",
                 'success': "#68cf29",
-                'orange': '#eb8153'
+                'orange': '#eb8153',
+                'grayBg': "#f7f7f7",
+
             }
         },
     },

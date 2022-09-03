@@ -1,8 +1,7 @@
 <script setup>
 import DatePicker from 'vue3-persian-datetime-picker'
-import {ref} from "vue";
 
-const date = ref('')
+const date = $ref('')
 
 </script>
 <template>

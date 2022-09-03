@@ -5,13 +5,12 @@ import {
   DxSorting,
 } from 'devextreme-vue/data-grid';
 import employees from '@/data/maxWage.js';
-import {ref} from "vue";
 import {tableTitles} from "@/utils/persian";
 import RangeDatePicker from '@/components/RangeDatePicker.vue'
 import {useThemeStore} from "@/stores/theme";
 import Title from '@/components/Texts/Title.vue'
 
-const data = ref(employees)
+const data = $ref(employees)
 const store = useThemeStore()
 
 defineProps(['title'])
@@ -30,10 +29,12 @@ defineProps(['title'])
         :show-borders="true"
         :rtl-enabled="true"
         :show-row-lines="true"
+        :row-alternation-enabled="true"
     >
+      <DxSorting mode="multiple"/>
+
       <DxColumn
           data-field="FullName"
-          sort-order="asc"
           :caption="tableTitles.fullName"
       />
       <DxColumn
@@ -41,15 +42,14 @@ defineProps(['title'])
           :format="{ maximumFractionDigits: 2 }"
           data-type="number"
           :caption="tableTitles.tade"
-
+          sort-order="desc"
       />
       <DxColumn data-field="Wage"
                 :format="{ maximumFractionDigits: 2 }"
                 data-type="number"
                 :caption="tableTitles.wage"
-
+                sort-order="desc"
       />
-      <DxSorting mode="multiple"/>
     </DxDataGrid>
   </div>
 
@@ -59,7 +59,6 @@ defineProps(['title'])
 .dx-widget, .dx-datagrid{
   font-family: 'IRANSansWeb', sans-serif !important;
   border-radius: 4px;
-  /*box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);*/
 }
 .dx-header-row > td{
   color: black;

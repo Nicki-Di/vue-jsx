@@ -5,7 +5,7 @@ import Header from "@/components/Common/Header.vue"
 import {useThemeStore} from "@/stores/theme";
 import {onMounted} from "vue";
 
-const isLoginPage = window.location.href.includes("login")
+const notShowDashboard = window.location.href.includes("login") || window.location.href.includes("test")
 const store = useThemeStore()
 onMounted(()=>{
   store.isDark ? document.documentElement.classList.add("dark") : document.documentElement.classList.remove("dark")
@@ -17,7 +17,7 @@ store.$subscribe(() => {
 </script>
 
 <template>
-  <SideBar v-if="!isLoginPage" />
-  <Header v-if="!isLoginPage"/>
+  <SideBar v-if="!notShowDashboard" />
+  <Header v-if="!notShowDashboard"/>
   <RouterView/>
 </template>

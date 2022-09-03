@@ -1,9 +1,8 @@
 <script setup>
 import {loginLabels, buttons, titles} from "@/utils/persian";
 import Input from "@/components/Form/Input.vue"
-import {ref} from "vue";
-const username = ref("")
-const password = ref("")
+const username = $ref("")
+const password = $ref("")
 
 </script>
 
@@ -15,8 +14,8 @@ const password = ref("")
         <p class="b1 text-s-80 ">{{ titles.loginSub }}</p>
       </div>
       <div class="flex-col-center gap-6 ">
-        <Input :title="loginLabels.username" type="text" :model="username.value"/>
-        <Input :title="loginLabels.password" type="password" :model="password.value"/>
+        <Input :title="loginLabels.username" type="text" :model="username"/>
+        <Input :title="loginLabels.password" type="password" :model="password"/>
         <button class="bg-secondary w-full rounded-lg py-2 text-s-100">{{ buttons.login }}</button>
       </div>
     </div>

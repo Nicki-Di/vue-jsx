@@ -39,6 +39,9 @@ export const titles = {
     yesterday: "روز قبل",
     maxTrade: "بیشترین خرید و فروش ها در نمادها",
     maxWage: "کاربران با تولید بیشترین کارمزد",
+    servicesUsers: "تعداد افراد استفاده کننده از سرویس ها",
+    usersView: "نمای کاربران"
+
 }
 
 export const units = {
