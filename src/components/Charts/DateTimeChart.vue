@@ -1,7 +1,6 @@
 <script setup>
 import fa from "apexcharts/dist/locales/fa.json"
 import {useThemeStore} from "@/stores/theme";
-import RangeDatePicker from '@/components/RangeDatePicker.vue'
 import Title from '@/components/Texts/Title.vue'
 
 const store = useThemeStore()
@@ -906,7 +905,6 @@ defineProps(['title'])
 <template>
     <div id="chart" class="flex flex-col gap-6 rounded-lg shadow p-4 " :class="store.isDark ? 'bg-primary-1' : 'bg-white'">
       <Title>{{title}}</Title>
-      <RangeDatePicker/>
       <apexchart type="line" height="350" width="550"  :options="chartOptions" :series="series"></apexchart>
     </div>
 </template>

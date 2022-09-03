@@ -30,7 +30,7 @@ defineProps(['item'])
         >
           <DisclosurePanel class = "py-2 text-s-80">
             <ul >
-              <li v-for = "sub in item.subMenu" class="b1 flex flex-row gap-4 items-center transition duration-400 hover:bg-secondary px-5 py-2 rounded-lg cursor-pointer">
+              <li v-for = "sub in item.subMenu" class="b2 flex flex-row gap-4 items-center transition duration-400 hover:bg-secondary px-5 py-2 rounded-lg cursor-pointer">
                 <RadioBoxMarked :size="10"/>
                 {{ sub }}
               </li>
