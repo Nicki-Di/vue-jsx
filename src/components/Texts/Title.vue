@@ -1,7 +1,7 @@
 <script setup>
-defineProps(['fixedColor'])
+defineProps(['weight', 'color'])
 </script>
 
 <template>
-  <p class = "h2 text-s-100 change-color-animation" :class="{'dark:text-s-100 text-s-10' : !fixedColor}"> <slot></slot></p>
+  <p class = "change-color-animation " :class="[weight, color ? `text-s-${color}` : 'dark:text-s-100 text-s-10']"> <slot></slot></p>
 </template>

@@ -6,9 +6,10 @@ import {
 } from 'devextreme-vue/data-grid';
 import employees from '@/data/maxWage.js';
 import {tableTitles} from "@/utils/persian";
-import RangeDatePicker from '@/components/RangeDatePicker.vue'
+import RangeDatePicker from '@/components/Auxiliary/RangeDatePicker.vue'
 import {useThemeStore} from "@/stores/theme";
 import Title from '@/components/Texts/Title.vue'
+import Wrapper from '@/components/Common/Wrapper.vue'
 
 const data = $ref(employees)
 const store = useThemeStore()
@@ -19,8 +20,8 @@ defineProps(['title'])
 
 
 <template>
-  <div class="flex flex-col gap-6 rounded-lg shadow p-4 " :class="store.isDark ? 'bg-primary-1' : 'bg-white'">
-    <Title>{{title}}</Title>
+  <Wrapper>
+    <Title weight="h2">{{title}}</Title>
     <RangeDatePicker/>
     <DxDataGrid
         ref="dataGrid"
@@ -51,14 +52,14 @@ defineProps(['title'])
                 sort-order="desc"
       />
     </DxDataGrid>
-  </div>
+  </Wrapper>
 
 </template>
 
 <style>
 .dx-widget, .dx-datagrid{
   font-family: 'IRANSansWeb', sans-serif !important;
-  border-radius: 4px;
+  padding: 1rem;
 }
 .dx-header-row > td{
   color: black;
@@ -70,9 +71,6 @@ defineProps(['title'])
   padding: 1rem 1rem !important;
 }
 
-.dx-datagrid-table.dx-datagrid-table-fixed > tbody > tr:nth-last-child(2) > td {
-  border-bottom: unset !important;
-}
 </style>
 
 

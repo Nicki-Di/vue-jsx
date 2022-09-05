@@ -14,8 +14,8 @@ const password = $ref("")
         <p class="b1 text-s-80 ">{{ titles.loginSub }}</p>
       </div>
       <div class="flex-col-center gap-6 ">
-        <Input :title="loginLabels.username" type="text" :model="username"/>
-        <Input :title="loginLabels.password" type="password" :model="password"/>
+        <Input :title="loginLabels.username" type="text" v-model="username"/>
+        <Input :title="loginLabels.password" type="password" v-model="password"/>
         <button class="bg-secondary w-full rounded-lg py-2 text-s-100">{{ buttons.login }}</button>
       </div>
     </div>

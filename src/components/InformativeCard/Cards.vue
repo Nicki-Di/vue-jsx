@@ -35,7 +35,7 @@ const cards = [
 </script>
 
 <template>
-  <div class="flex flex-row gap-8 mt-8 items-center justify-center">
+  <div class="flex flex-row gap-8 items-center justify-center mt-8 ">
     <SingleCard v-for="card in cards" :data="card"/>
 
   </div>

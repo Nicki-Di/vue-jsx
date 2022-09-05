@@ -1,9 +1,9 @@
 <script setup>
 import {useThemeStore} from "@/stores/theme";
 const store = useThemeStore()
-import RangeDatePicker from '@/components/RangeDatePicker.vue'
+import RangeDatePicker from '@/components/Auxiliary/RangeDatePicker.vue'
 import Title from '@/components/Texts/Title.vue'
-
+import Wrapper from '@/components/Common/Wrapper.vue'
 
 const series = [{
   name: 'خرید',
@@ -73,14 +73,18 @@ defineProps(['title'])
 </script>
 
 <template>
-  <div id="chart" class="flex flex-col gap-6 rounded-lg shadow p-4 " :class="store.isDark ? 'bg-primary-1' : 'bg-white'">
-    <Title>{{title}}</Title>
+  <Wrapper id="chart">
+    <Title weight="h2">{{title}}</Title>
     <RangeDatePicker/>
     <apexchart type="bar" height="300" width="550" :options="chartOptions" :series="series"/>
-  </div>
+  </Wrapper>
 
 </template>
 <style>
+.vue-apexcharts{
+  width: fit-content;
+  align-self: center;
+}
 .apexcharts-legend-series {
   display: flex !important;
   flex-direction: row;
@@ -92,7 +96,7 @@ defineProps(['title'])
 .apexcharts-legend {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
 }
 
 .apexcharts-tooltip-marker {

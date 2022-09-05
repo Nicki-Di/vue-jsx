@@ -2,6 +2,7 @@
 import fa from "apexcharts/dist/locales/fa.json"
 import {useThemeStore} from "@/stores/theme";
 import Title from '@/components/Texts/Title.vue'
+import Wrapper from '@/components/Common/Wrapper.vue'
 
 const store = useThemeStore()
 store.$subscribe(() => {
@@ -863,7 +864,6 @@ let chartOptions = $ref({
     type: 'line',
     height: 350,
     foreColor: store.isDark ? "#fff" : "#000",
-
     locales: [fa],
     defaultLocale: 'fa',
     fontFamily: 'IRANSansWeb, sans-serif',
@@ -898,15 +898,30 @@ let chartOptions = $ref({
     position: 'top',
     // offsetY: 40,
   },
+  responsive: [
+    {
+      breakpoint: 1390,
+      options: {
+        plotOptions: {
+          bar: {
+            horizontal: false
+          }
+        },
+        legend: {
+          position: "bottom"
+        }
+      }
+    }
+  ]
 })
 defineProps(['title'])
 </script>
 
 <template>
-    <div id="chart" class="flex flex-col gap-6 rounded-lg shadow p-4 " :class="store.isDark ? 'bg-primary-1' : 'bg-white'">
-      <Title>{{title}}</Title>
-      <apexchart type="line" height="350" width="550"  :options="chartOptions" :series="series"></apexchart>
-    </div>
+    <Wrapper id="chart">
+      <Title weight="h2">{{title}}</Title>
+      <apexchart type="line" height="350" width="700"  :options="chartOptions" :series="series"></apexchart>
+    </Wrapper>
 </template>
 
 <style>

@@ -3,18 +3,38 @@ import {CalendarIcon, ChartBarIcon, FolderIcon, InboxIcon, UsersIcon} from "@her
 export const copyRight = "تمامی حقوق محفوظ است"
 export const navigation = [
 
-    {name: 'کاربران', icon: UsersIcon, href: '#', count: 3, current: false, subMenu: ["مشتریان", "کاربران ادمین"]},
-    {name: 'مدیریت درخواست‌ها', icon: FolderIcon, href: '#', count: 4, current: false},
-    {name: 'معاملات انجام شده', icon: CalendarIcon, href: '#', current: false},
-    {name: 'قوانین و محدودیت‌ها', icon: InboxIcon, href: '#', current: false},
-    {name: 'دسترسی‌ها', icon: ChartBarIcon, href: '#', count: 12, current: false}
+    {
+        name: 'کاربران',
+        icon: UsersIcon,
+        subMenu: [{name: "مشتریان", href: '/customers', current: false}, {
+            name: "کاربران ادمین",
+            href: '/admins',
+            current: false
+        }]
+    },
+    {name: 'مدیریت درخواست‌ها', icon: FolderIcon, href: '/requests', current: false},
+    {name: 'معاملات انجام شده', icon: CalendarIcon, href: '/trades', current: false},
+    {name: 'قوانین و محدودیت‌ها', icon: InboxIcon, href: '/rules', current: false},
+    {
+        name: 'دسترسی‌ها',
+        icon: ChartBarIcon,
+        href: '/access',
+        count: 12,
+        current: false,
+        subMenu: [{name: "دسترسی کاربران", href: '/customers', current: false}, {
+            name: "دسترسی ادمین",
+            href: '/customers',
+            current: false
+        }]
+    }
 ]
 export const loginLabels = {
     username: "نام کاربری",
     password: "رمز عبور"
 }
 export const buttons = {
-    login: "ورود"
+    login: "ورود",
+    toggleShowFilter: "نمایش فیلترها"
 }
 
 export const titles = {
@@ -28,7 +48,8 @@ export const titles = {
     maxTrade: "بیشترین خرید و فروش ها در نمادها",
     maxWage: "کاربران با تولید بیشترین کارمزد",
     servicesUsers: "تعداد افراد استفاده کننده از سرویس ها",
-    usersView: "نمای کاربران"
+    usersView: "نمای کاربران",
+    customers: "اطلاعات مشتریان"
 
 }
 
@@ -39,5 +60,17 @@ export const units = {
 export const tableTitles = {
     fullName: "نام و نام خانوادگی",
     tade: "حجم معامله",
-    wage: "کارمزد تولید شده"
+    wage: "کارمزد تولید شده",
+    nationalID: "کد ملی",
+    stockID: "کد بورسی",
+    username: "نام کاربری",
+    accessDate: "تاریخ اهدای دسترسی",
+    phoneNumber: "شماره همراه",
+    status: "وضعیت"
+
+}
+
+export const status = {
+    active: "فعال",
+    inactive: "غیرفعال"
 }

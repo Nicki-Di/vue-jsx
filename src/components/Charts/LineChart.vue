@@ -1,5 +1,6 @@
 <script setup>
 import {useThemeStore} from "@/stores/theme";
+import Wrapper from '@/components/Common/Wrapper.vue'
 
 const store = useThemeStore()
 store.$subscribe(() => {
@@ -98,9 +99,9 @@ let chartOptions = $ref({
 </script>
 
 <template>
-  <div id="chart" class="flex flex-col gap-6 rounded-lg shadow p-4 " :class="store.isDark ? 'bg-primary-1' : 'bg-white'">
+  <Wrapper id="chart">
     <apexchart type="line" height="390" width="550" :options="chartOptions" :series="series"/>
-  </div>
+  </Wrapper>
 </template>
 
 <style>
